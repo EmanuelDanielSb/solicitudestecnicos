@@ -3,184 +3,245 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Solicitudes Técnicos — Digi Mobil</title>
+<title>Solicitudes Técnicos · CLPROYECT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --green:      #25D366;
-    --green-dark: #1DA851;
-    --green-light:#E1F5EE;
-    --green-mid:  #0F6E56;
-    --red-bg:     #FCEBEB;
-    --red-bd:     #E24B4A;
-    --red-tx:     #A32D2D;
-    --amb-bg:     #FAEEDA;
-    --amb-bd:     #EF9F27;
-    --amb-tx:     #854F0B;
-    --blu-bg:     #E6F1FB;
-    --blu-bd:     #378ADD;
-    --blu-tx:     #185FA5;
-    --gr-bg:      #EAF3DE;
-    --gr-bd:      #639922;
-    --gr-tx:      #3B6D11;
-    --border:     #E0E0DB;
-    --surface:    #F8F8F6;
-    --text:       #1A1A18;
-    --text-muted: #6B6B67;
-    --radius:     10px;
-    --radius-sm:  7px;
+    --ink:        #0E1623;
+    --ink-soft:   #1B2738;
+    --teal:       #0FB5A6;
+    --teal-dark:  #0A8A7E;
+    --teal-tint:  #E4F7F5;
+    --wa:         #25D366;
+    --wa-dark:    #1DA851;
+    --paper:      #F5F6F4;
+    --card:       #FFFFFF;
+    --line:       #E3E6E2;
+    --text:       #18202E;
+    --muted:      #67707E;
+    --faint:      #9AA2AE;
+    --red-bg:     #FDEDED; --red-bd: #DF5050; --red-tx: #A32D2D;
+    --amb-bg:     #FBF1DC; --amb-bd: #E89C2B; --amb-tx: #82500D;
+    --blu-bg:     #E8F1FB; --blu-bd: #4690D8; --blu-tx: #1B5E9E;
+    --grn-bg:     #EAF4E4; --grn-bd: #6B9B33; --grn-tx: #3E6818;
+    --r:          12px;
+    --r-sm:       8px;
+    --sans:       'Manrope', -apple-system, 'Segoe UI', sans-serif;
+    --mono:       'JetBrains Mono', 'Courier New', monospace;
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: var(--surface);
+    font-family: var(--sans);
+    background: var(--paper);
     color: var(--text);
     min-height: 100vh;
-    padding: 0 0 2rem;
+    padding-bottom: 3rem;
   }
 
-  /* HEADER */
-  .top-bar {
-    background: #fff;
-    border-bottom: 0.5px solid var(--border);
-    padding: 14px 20px;
+  /* ───────── HEADER ───────── */
+  .brand-bar {
+    background: var(--ink);
+    padding: 18px 20px 46px;
+    position: relative;
+  }
+
+  .brand-row {
+    max-width: 600px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
-    gap: 12px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    justify-content: space-between;
   }
 
-  .top-bar .logo-circle {
-    width: 38px; height: 38px;
-    border-radius: 50%;
-    background: var(--green-light);
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
+  .wordmark {
+    font-weight: 800;
+    font-size: 17px;
+    letter-spacing: 0.14em;
+    color: #fff;
   }
 
-  .top-bar .logo-circle svg { width: 20px; height: 20px; }
+  .wordmark span { color: var(--teal); }
 
-  .top-bar h1 {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text);
-    line-height: 1.2;
+  .brand-tag {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--faint);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
-  .top-bar p {
-    font-size: 12px;
-    color: var(--text-muted);
+  .header-title {
+    max-width: 600px;
+    margin: 18px auto 0;
   }
 
-  /* MAIN CARD */
-  .card {
-    background: #fff;
-    border: 0.5px solid var(--border);
-    border-radius: var(--radius);
-    margin: 20px auto;
-    max-width: 580px;
-    padding: 20px;
+  .header-title h1 {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
   }
 
-  .section-title {
+  .header-title p {
+    color: var(--faint);
+    font-size: 13px;
+    margin-top: 4px;
+    font-weight: 500;
+  }
+
+  /* ───────── CARD (parte de trabajo) ───────── */
+  .sheet {
+    max-width: 600px;
+    margin: -26px auto 0;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    box-shadow: 0 2px 16px rgba(14,22,35,0.07);
+    overflow: hidden;
+  }
+
+  .sheet-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 22px;
+    background: var(--teal-tint);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .sheet-head .doc-label {
+    font-family: var(--mono);
     font-size: 11px;
     font-weight: 600;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.1em;
+    color: var(--teal-dark);
     text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 12px;
-    padding-bottom: 8px;
-    border-bottom: 0.5px solid var(--border);
   }
 
-  /* TIPO CHIPS */
+  .sheet-head .doc-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .sheet-body { padding: 22px; }
+
+  /* ───────── SECTIONS ───────── */
+  .sec-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 26px 0 14px;
+  }
+
+  .sec-label:first-child { margin-top: 0; }
+
+  .sec-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  /* ───────── TIPO ───────── */
   .tipo-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin-bottom: 20px;
+    gap: 9px;
   }
 
   .chip {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 12px;
-    border-radius: var(--radius-sm);
-    border: 0.5px solid var(--border);
-    background: #fff;
+    gap: 9px;
+    padding: 12px 13px;
+    border-radius: var(--r-sm);
+    border: 1.5px solid var(--line);
+    background: var(--card);
     cursor: pointer;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text-muted);
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--muted);
     transition: all 0.14s;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
   }
 
-  .chip svg { width: 16px; height: 16px; flex-shrink: 0; }
-  .chip:hover { border-color: #bbb; background: var(--surface); }
-
-  .chip.urgente.sel  { background: var(--red-bg);  border-color: var(--red-bd);  color: var(--red-tx); }
-  .chip.material.sel { background: var(--amb-bg);  border-color: var(--amb-bd);  color: var(--amb-tx); }
-  .chip.tarea.sel    { background: var(--blu-bg);  border-color: var(--blu-bd);  color: var(--blu-tx); }
-  .chip.consulta.sel { background: var(--gr-bg);   border-color: var(--gr-bd);   color: var(--gr-tx);  }
-
-  /* PRIORIDAD */
-  .prio-row {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 20px;
+  .chip .dot {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: var(--faint);
+    transition: background 0.14s;
   }
+
+  .chip:hover { border-color: var(--faint); }
+
+  .chip.urgente.sel  { background: var(--red-bg); border-color: var(--red-bd); color: var(--red-tx); }
+  .chip.urgente.sel .dot { background: var(--red-bd); }
+  .chip.material.sel { background: var(--amb-bg); border-color: var(--amb-bd); color: var(--amb-tx); }
+  .chip.material.sel .dot { background: var(--amb-bd); }
+  .chip.tarea.sel    { background: var(--blu-bg); border-color: var(--blu-bd); color: var(--blu-tx); }
+  .chip.tarea.sel .dot { background: var(--blu-bd); }
+  .chip.consulta.sel { background: var(--grn-bg); border-color: var(--grn-bd); color: var(--grn-tx); }
+  .chip.consulta.sel .dot { background: var(--grn-bd); }
+
+  /* ───────── PRIORIDAD ───────── */
+  .prio-row { display: flex; gap: 9px; }
 
   .prio-btn {
     flex: 1;
-    padding: 9px 6px;
-    border-radius: var(--radius-sm);
-    border: 0.5px solid var(--border);
-    background: #fff;
+    padding: 10px 6px;
+    border-radius: var(--r-sm);
+    border: 1.5px solid var(--line);
+    background: var(--card);
     cursor: pointer;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 700;
     text-align: center;
-    color: var(--text-muted);
+    color: var(--muted);
     transition: all 0.14s;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
   }
 
-  .prio-btn:hover { background: var(--surface); }
-  .prio-btn.alta.sel  { background: var(--red-bg);  border-color: var(--red-bd);  color: var(--red-tx); }
-  .prio-btn.media.sel { background: var(--amb-bg);  border-color: var(--amb-bd);  color: var(--amb-tx); }
-  .prio-btn.baja.sel  { background: var(--gr-bg);   border-color: var(--gr-bd);   color: var(--gr-tx); }
+  .prio-btn:hover { border-color: var(--faint); }
+  .prio-btn.alta.sel  { background: var(--red-bg); border-color: var(--red-bd); color: var(--red-tx); }
+  .prio-btn.media.sel { background: var(--amb-bg); border-color: var(--amb-bd); color: var(--amb-tx); }
+  .prio-btn.baja.sel  { background: var(--grn-bg); border-color: var(--grn-bd); color: var(--grn-tx); }
 
-  /* FORM FIELDS */
+  /* ───────── FORM ───────── */
   .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 12px;
+    gap: 13px;
+    margin-bottom: 13px;
   }
 
-  .form-group { margin-bottom: 12px; }
+  .fg { margin-bottom: 13px; }
 
   label {
     display: block;
     font-size: 12px;
-    font-weight: 600;
-    color: var(--text-muted);
-    margin-bottom: 5px;
-    letter-spacing: 0.02em;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
   }
 
   label .opt {
-    font-weight: 400;
-    color: #aaa;
+    font-weight: 500;
+    color: var(--faint);
     font-size: 11px;
-    margin-left: 4px;
+    margin-left: 5px;
   }
 
   input[type="text"],
@@ -188,315 +249,328 @@
   select,
   textarea {
     width: 100%;
-    padding: 9px 12px;
-    border-radius: var(--radius-sm);
-    border: 0.5px solid var(--border);
-    background: #fff;
+    padding: 11px 13px;
+    border-radius: var(--r-sm);
+    border: 1.5px solid var(--line);
+    background: var(--card);
     color: var(--text);
-    font-size: 14px;
-    font-family: inherit;
+    font-size: 14.5px;
+    font-family: var(--sans);
+    font-weight: 500;
     outline: none;
     transition: border-color 0.14s, box-shadow 0.14s;
     appearance: none;
     -webkit-appearance: none;
   }
 
+  input::placeholder, textarea::placeholder { color: var(--faint); font-weight: 400; }
+
   select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2367707E' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right 10px center;
-    padding-right: 32px;
+    background-position: right 12px center;
+    padding-right: 34px;
   }
 
   input:focus, select:focus, textarea:focus {
-    border-color: var(--green);
-    box-shadow: 0 0 0 3px rgba(37,211,102,0.12);
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(15,181,166,0.13);
   }
 
-  textarea {
-    resize: vertical;
-    min-height: 90px;
-    line-height: 1.5;
-  }
+  textarea { resize: vertical; min-height: 96px; line-height: 1.55; }
 
-  /* FOTO UPLOAD */
-  .foto-area {
-    border: 1.5px dashed var(--border);
-    border-radius: var(--radius-sm);
-    padding: 16px;
+  /* ───────── FOTOS ───────── */
+  .foto-zone {
+    border: 1.5px dashed var(--line);
+    border-radius: var(--r-sm);
+    padding: 18px 14px;
     text-align: center;
     cursor: pointer;
     transition: all 0.14s;
-    position: relative;
-    background: var(--surface);
+    background: var(--paper);
   }
 
-  .foto-area:hover { border-color: var(--green); background: var(--green-light); }
-  .foto-area input[type="file"] { display: none; }
+  .foto-zone:hover { border-color: var(--teal); background: var(--teal-tint); }
+  .foto-zone.full { opacity: 0.45; cursor: not-allowed; }
+  .foto-zone input { display: none; }
 
-  .foto-area svg { width: 28px; height: 28px; color: var(--text-muted); margin-bottom: 6px; }
-  .foto-area p { font-size: 13px; color: var(--text-muted); }
-  .foto-area span { font-size: 11px; color: #aaa; }
-
-  #foto-preview-wrap {
-    display: none;
-    margin-top: 10px;
-    position: relative;
-    text-align: left;
-  }
-
-  #foto-preview-wrap img {
-    max-height: 160px;
-    border-radius: var(--radius-sm);
-    border: 0.5px solid var(--border);
-    object-fit: cover;
-    max-width: 100%;
-  }
-
-  .foto-remove {
-    position: absolute;
-    top: 4px; right: 4px;
-    width: 24px; height: 24px;
+  .foto-zone .fz-icon {
+    width: 34px; height: 34px;
+    margin: 0 auto 8px;
     border-radius: 50%;
-    background: rgba(0,0,0,0.55);
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
+    background: var(--card);
+    border: 1px solid var(--line);
     display: flex; align-items: center; justify-content: center;
-    line-height: 1;
   }
 
-  #foto-name {
-    font-size: 12px;
-    color: var(--text-muted);
-    margin-top: 6px;
-    display: none;
-  }
+  .foto-zone .fz-icon svg { width: 17px; height: 17px; color: var(--teal-dark); }
 
-  /* DIVIDER */
-  hr { border: none; border-top: 0.5px solid var(--border); margin: 20px 0; }
+  .foto-zone p { font-size: 13px; font-weight: 600; color: var(--text); }
+  .foto-zone span { font-size: 11.5px; color: var(--faint); display: block; margin-top: 3px; }
 
-  /* PREVIEW BOX */
-  .preview-box {
-    background: var(--surface);
-    border: 0.5px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 12px 14px;
-    font-family: 'Courier New', monospace;
-    font-size: 12px;
-    color: var(--text-muted);
-    white-space: pre-wrap;
-    line-height: 1.7;
-    display: none;
-    margin-bottom: 14px;
-  }
-
-  .preview-box.visible { display: block; }
-
-  .preview-label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 6px;
-    display: none;
-  }
-
-  .preview-label.visible { display: block; }
-
-  /* SEND BUTTON */
-  .btn-send {
-    width: 100%;
-    padding: 13px;
-    border-radius: var(--radius);
-    border: none;
-    background: var(--green);
-    color: #fff;
-    font-size: 15px;
-    font-weight: 600;
-    font-family: inherit;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .foto-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 9px;
-    transition: background 0.15s, transform 0.1s;
-    -webkit-tap-highlight-color: transparent;
+    margin-top: 10px;
   }
 
-  .btn-send:hover { background: var(--green-dark); }
-  .btn-send:active { transform: scale(0.98); }
-  .btn-send svg { width: 22px; height: 22px; }
+  .foto-item {
+    position: relative;
+    border-radius: var(--r-sm);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    aspect-ratio: 1;
+    background: var(--paper);
+  }
 
-  /* ERROR */
-  .error-msg {
+  .foto-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .foto-item .rm {
+    position: absolute;
+    top: 5px; right: 5px;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: rgba(14,22,35,0.72);
+    color: #fff;
+    border: none;
+    cursor: pointer;
     font-size: 12px;
+    line-height: 1;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--sans);
+  }
+
+  .foto-count {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+
+  /* ───────── PREVIEW ───────── */
+  .preview-wrap { display: none; margin-top: 22px; }
+  .preview-wrap.visible { display: block; }
+
+  .preview-box {
+    background: var(--ink);
+    border-radius: var(--r-sm);
+    padding: 16px 18px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: #C8D2DC;
+    white-space: pre-wrap;
+    line-height: 1.75;
+    overflow-x: auto;
+  }
+
+  /* ───────── ERROR ───────── */
+  .error-msg {
+    font-size: 13px;
+    font-weight: 600;
     color: var(--red-tx);
     background: var(--red-bg);
-    border: 0.5px solid var(--red-bd);
-    border-radius: var(--radius-sm);
-    padding: 8px 12px;
-    margin-bottom: 12px;
+    border: 1px solid var(--red-bd);
+    border-radius: var(--r-sm);
+    padding: 10px 14px;
+    margin-top: 16px;
     display: none;
   }
 
   .error-msg.visible { display: block; }
 
-  /* MOBILE */
-  @media (max-width: 500px) {
-    .card { margin: 12px; padding: 16px; }
+  /* ───────── BOTÓN ───────── */
+  .btn-send {
+    width: 100%;
+    margin-top: 18px;
+    padding: 15px;
+    border-radius: var(--r-sm);
+    border: none;
+    background: var(--wa);
+    color: #fff;
+    font-size: 15.5px;
+    font-weight: 700;
+    font-family: var(--sans);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background 0.15s, transform 0.1s;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn-send:hover { background: var(--wa-dark); }
+  .btn-send:active { transform: scale(0.985); }
+  .btn-send svg { width: 21px; height: 21px; }
+
+  .footer-note {
+    max-width: 600px;
+    margin: 14px auto 0;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--faint);
+    letter-spacing: 0.06em;
+  }
+
+  /* ───────── MOBILE ───────── */
+  @media (max-width: 520px) {
+    .brand-bar { padding: 14px 16px 42px; }
+    .sheet { margin: -26px 12px 0; }
+    .sheet-body { padding: 18px 16px; }
     .form-row { grid-template-columns: 1fr; gap: 0; }
-    .tipo-grid { grid-template-columns: 1fr 1fr; }
-    .top-bar h1 { font-size: 14px; }
+    .header-title h1 { font-size: 19px; }
   }
 </style>
 </head>
 <body>
 
-<div class="top-bar">
-  <div class="logo-circle">
-    <svg viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-    </svg>
+<!-- HEADER -->
+<div class="brand-bar">
+  <div class="brand-row">
+    <div class="wordmark">CL<span>PROYECT</span></div>
+    <div class="brand-tag">Field Ops</div>
   </div>
-  <div>
-    <h1>Solicitudes de Técnicos</h1>
-    <p>Digi Mobil · MAD9</p>
+  <div class="header-title">
+    <h1>Solicitudes de técnicos</h1>
+    <p>Rellena el parte y se enviará directamente por WhatsApp al supervisor.</p>
   </div>
 </div>
 
-<div class="card">
-
-  <!-- TIPO -->
-  <p class="section-title">Tipo de solicitud</p>
-  <div class="tipo-grid">
-    <div class="chip urgente" onclick="selTipo(this,'🔴 Asistencia urgente')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      Asistencia urgente
-    </div>
-    <div class="chip material" onclick="selTipo(this,'🟡 Material / herramientas')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-      Material / herramientas
-    </div>
-    <div class="chip tarea" onclick="selTipo(this,'🔵 Tarea / seguimiento')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-      Tarea / seguimiento
-    </div>
-    <div class="chip consulta" onclick="selTipo(this,'🟢 Consulta / duda')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-      Consulta / duda
-    </div>
+<!-- PARTE DE TRABAJO -->
+<div class="sheet">
+  <div class="sheet-head">
+    <span class="doc-label">Parte de solicitud</span>
+    <span class="doc-num" id="doc-num">REF —</span>
   </div>
 
-  <!-- PRIORIDAD -->
-  <p class="section-title">Prioridad</p>
-  <div class="prio-row" style="margin-bottom:20px;">
-    <div class="prio-btn alta"  onclick="selPrio(this,'🔴 ALTA')">🔴 Alta</div>
-    <div class="prio-btn media" onclick="selPrio(this,'🟡 MEDIA')">🟡 Media</div>
-    <div class="prio-btn baja"  onclick="selPrio(this,'🟢 BAJA')">🟢 Baja</div>
-  </div>
+  <div class="sheet-body">
 
-  <hr />
-
-  <!-- DATOS TÉCNICO -->
-  <p class="section-title">Datos del técnico</p>
-
-  <div class="form-row">
-    <div class="form-group">
-      <label>Nombre completo</label>
-      <input type="text" id="nombre" placeholder="Ej. Carlos García" oninput="updatePreview()" />
+    <!-- TIPO -->
+    <p class="sec-label">Tipo de solicitud</p>
+    <div class="tipo-grid">
+      <div class="chip urgente"  onclick="selTipo(this,'ASISTENCIA URGENTE')"><span class="dot"></span>Asistencia urgente</div>
+      <div class="chip material" onclick="selTipo(this,'MATERIAL / HERRAMIENTAS')"><span class="dot"></span>Material / herramientas</div>
+      <div class="chip tarea"    onclick="selTipo(this,'TAREA / SEGUIMIENTO')"><span class="dot"></span>Tarea / seguimiento</div>
+      <div class="chip consulta" onclick="selTipo(this,'CONSULTA / DUDA')"><span class="dot"></span>Consulta / duda</div>
     </div>
-    <div class="form-group">
-      <label>Delegación</label>
-      <select id="delegacion" onchange="updatePreview()">
-        <option value="">Seleccionar...</option>
-        <option>Madrid</option>
-        <option>Barcelona</option>
-        <option>Valencia</option>
-        <option>Sevilla</option>
-        <option>Bilbao</option>
-        <option>Zaragoza</option>
-      </select>
+
+    <!-- PRIORIDAD -->
+    <p class="sec-label">Prioridad</p>
+    <div class="prio-row">
+      <div class="prio-btn alta"  onclick="selPrio(this,'ALTA')">Alta</div>
+      <div class="prio-btn media" onclick="selPrio(this,'MEDIA')">Media</div>
+      <div class="prio-btn baja"  onclick="selPrio(this,'BAJA')">Baja</div>
     </div>
-  </div>
 
-  <div class="form-row">
-    <div class="form-group">
-      <label>ID trabajo / avería</label>
-      <input type="text" id="id_trabajo" placeholder="Ej. INC-20481" oninput="updatePreview()" />
+    <!-- DATOS -->
+    <p class="sec-label">Datos del técnico</p>
+
+    <div class="form-row">
+      <div class="fg">
+        <label>Nombre completo</label>
+        <input type="text" id="nombre" placeholder="Ej. Carlos García" oninput="updatePreview()" />
+      </div>
+      <div class="fg">
+        <label>Delegación</label>
+        <select id="delegacion" onchange="updatePreview()">
+          <option value="">Seleccionar...</option>
+          <option>Madrid</option>
+          <option>Barcelona</option>
+          <option>Valencia</option>
+          <option>Sevilla</option>
+          <option>Bilbao</option>
+          <option>Zaragoza</option>
+        </select>
+      </div>
     </div>
-    <div class="form-group">
-      <label>Fecha</label>
-      <input type="date" id="fecha" oninput="updatePreview()" />
+
+    <div class="form-row">
+      <div class="fg">
+        <label>ID trabajo / avería</label>
+        <input type="text" id="id_trabajo" placeholder="Ej. INC-20481" oninput="updatePreview()" />
+      </div>
+      <div class="fg">
+        <label>Fecha</label>
+        <input type="date" id="fecha" oninput="updatePreview()" />
+      </div>
     </div>
-  </div>
 
-  <hr />
+    <!-- DETALLE -->
+    <p class="sec-label">Detalle</p>
 
-  <!-- DESCRIPCION -->
-  <p class="section-title">Detalle de la solicitud</p>
+    <div class="fg">
+      <label>Descripción detallada</label>
+      <textarea id="descripcion" placeholder="Describe el problema, el material necesario, la tarea o la consulta..." oninput="updatePreview()"></textarea>
+    </div>
 
-  <div class="form-group">
-    <label>Descripción detallada</label>
-    <textarea id="descripcion" placeholder="Describe el problema, el material necesario, la tarea o la consulta..." oninput="updatePreview()"></textarea>
-  </div>
+    <div class="fg">
+      <label>Dirección / referencia del cliente <span class="opt">opcional</span></label>
+      <input type="text" id="direccion" placeholder="Calle, número, municipio o referencia" oninput="updatePreview()" />
+    </div>
 
-  <div class="form-group">
-    <label>Dirección / referencia del cliente <span class="opt">opcional</span></label>
-    <input type="text" id="direccion" placeholder="Calle, número, municipio o referencia" oninput="updatePreview()" />
-  </div>
+    <!-- FOTOS -->
+    <div class="fg">
+      <label>Fotos <span class="opt">opcional · máximo 3</span></label>
+      <div class="foto-zone" id="foto-zone" onclick="abrirGaleria()">
+        <div class="fz-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+        </div>
+        <p>Añadir fotos desde la galería</p>
+        <span>JPG, PNG o HEIC</span>
+        <input type="file" id="foto-input" accept="image/*" multiple onchange="onFotos(this)" />
+      </div>
+      <div class="foto-grid" id="foto-grid"></div>
+      <p class="foto-count" id="foto-count"></p>
+    </div>
 
-  <!-- FOTO -->
-  <div class="form-group">
-    <label>Adjuntar foto <span class="opt">opcional</span></label>
-    <div class="foto-area" onclick="document.getElementById('foto-input').click()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
-        <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-        <polyline points="21 15 16 10 5 21"/>
+    <!-- PREVIEW -->
+    <div class="preview-wrap" id="preview-wrap">
+      <p class="sec-label">Vista previa del mensaje</p>
+      <pre class="preview-box" id="preview"></pre>
+    </div>
+
+    <div id="error-msg" class="error-msg"></div>
+
+    <!-- BOTÓN -->
+    <button class="btn-send" onclick="enviar()">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.556 4.116 1.523 5.847L0 24l6.337-1.499A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.372l-.36-.214-3.727.881.916-3.635-.235-.374A9.817 9.817 0 012.182 12C2.182 6.574 6.574 2.182 12 2.182c5.425 0 9.818 4.392 9.818 9.818 0 5.425-4.393 9.818-9.818 9.818z"/>
       </svg>
-      <p>Toca para añadir foto</p>
-      <span>JPG, PNG o HEIC · máx 10 MB</span>
-      <input type="file" id="foto-input" accept="image/*" capture="environment" onchange="onFoto(this)" />
-    </div>
-    <div id="foto-preview-wrap">
-      <img id="foto-preview-img" src="" alt="Vista previa" />
-      <button class="foto-remove" onclick="quitarFoto()" title="Quitar foto">✕</button>
-    </div>
-    <p id="foto-name"></p>
+      Enviar por WhatsApp
+    </button>
   </div>
-
-  <hr />
-
-  <!-- PREVIEW -->
-  <p id="preview-label" class="preview-label">Vista previa del mensaje</p>
-  <pre id="preview" class="preview-box"></pre>
-
-  <div id="error-msg" class="error-msg"></div>
-
-  <!-- BOTÓN -->
-  <button class="btn-send" onclick="enviar()">
-    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.556 4.116 1.523 5.847L0 24l6.337-1.499A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.372l-.36-.214-3.727.881.916-3.635-.235-.374A9.817 9.817 0 012.182 12C2.182 6.574 6.574 2.182 12 2.182c5.425 0 9.818 4.392 9.818 9.818 0 5.425-4.393 9.818-9.818 9.818z"/>
-    </svg>
-    Enviar solicitud por WhatsApp
-  </button>
 </div>
+
+<p class="footer-note">CLPROYECT · solicitudestecnicos.clproyect.com</p>
 
 <script>
-// ── Destino ofuscado ──────────────────────────────────────────
-// El número no aparece en texto plano. Se reconstruye en runtime.
+// ── Destino (ofuscado, prefijo ES incluido) ──────────────────
 const _d = [50,51,53,51,50,53,48,47,52,55,47].map(c=>String.fromCharCode(c+1)).join('');
 
-// ── Estado ────────────────────────────────────────────────────
-let tipoSel  = '';
-let prioSel  = '';
-let fotoFile = null;
-let fotoB64  = '';
+// ── Estado ───────────────────────────────────────────────────
+const MAX_FOTOS = 3;
+let tipoSel = '';
+let prioSel = '';
+let fotos   = []; // [{file, b64}]
 
-// ── Selección tipo ────────────────────────────────────────────
+// ── Nº de referencia del parte (local, informativo) ──────────
+(function genRef(){
+  const d = new Date();
+  const ref = 'REF ' + d.getFullYear().toString().slice(2)
+    + String(d.getMonth()+1).padStart(2,'0')
+    + String(d.getDate()).padStart(2,'0')
+    + '-' + String(Math.floor(Math.random()*900)+100);
+  document.getElementById('doc-num').textContent = ref;
+  window._ref = ref;
+})();
+
+// ── Selecciones ──────────────────────────────────────────────
 function selTipo(el, v) {
   document.querySelectorAll('.chip').forEach(c => c.classList.remove('sel'));
   el.classList.add('sel');
@@ -504,7 +578,6 @@ function selTipo(el, v) {
   updatePreview();
 }
 
-// ── Selección prioridad ───────────────────────────────────────
 function selPrio(el, v) {
   document.querySelectorAll('.prio-btn').forEach(b => b.classList.remove('sel'));
   el.classList.add('sel');
@@ -512,95 +585,128 @@ function selPrio(el, v) {
   updatePreview();
 }
 
-// ── Foto ──────────────────────────────────────────────────────
-function onFoto(input) {
-  const file = input.files[0];
-  if (!file) return;
-  fotoFile = file;
-  const reader = new FileReader();
-  reader.onload = function(e) {
-    fotoB64 = e.target.result;
-    document.getElementById('foto-preview-img').src = fotoB64;
-    document.getElementById('foto-preview-wrap').style.display = 'block';
-    document.getElementById('foto-name').style.display = 'block';
-    document.getElementById('foto-name').textContent = '📎 ' + file.name + ' (' + (file.size/1024).toFixed(0) + ' KB)';
-  };
-  reader.readAsDataURL(file);
+// ── Fotos (galería, múltiple, máx 3) ─────────────────────────
+function abrirGaleria() {
+  if (fotos.length >= MAX_FOTOS) return;
+  document.getElementById('foto-input').click();
 }
 
-function quitarFoto() {
-  fotoFile = null; fotoB64 = '';
-  document.getElementById('foto-input').value = '';
-  document.getElementById('foto-preview-wrap').style.display = 'none';
-  document.getElementById('foto-name').style.display = 'none';
-  document.getElementById('foto-name').textContent = '';
+function onFotos(input) {
+  const files = Array.from(input.files || []);
+  const libres = MAX_FOTOS - fotos.length;
+
+  if (files.length > libres) {
+    mostrarError('Solo puedes adjuntar ' + MAX_FOTOS + ' fotos como máximo. Se añadirán las ' + libres + ' primeras.');
+  }
+
+  files.slice(0, libres).forEach(file => {
+    const reader = new FileReader();
+    reader.onload = e => {
+      fotos.push({ file: file, b64: e.target.result });
+      renderFotos();
+      updatePreview();
+    };
+    reader.readAsDataURL(file);
+  });
+
+  input.value = ''; // permite volver a seleccionar el mismo archivo
 }
 
-// ── Preview ───────────────────────────────────────────────────
+function quitarFoto(idx) {
+  fotos.splice(idx, 1);
+  renderFotos();
+  updatePreview();
+}
+
+function renderFotos() {
+  const grid  = document.getElementById('foto-grid');
+  const count = document.getElementById('foto-count');
+  const zone  = document.getElementById('foto-zone');
+
+  grid.innerHTML = '';
+  fotos.forEach((f, i) => {
+    const div = document.createElement('div');
+    div.className = 'foto-item';
+    const img = document.createElement('img');
+    img.src = f.b64;
+    img.alt = 'Foto ' + (i+1);
+    const btn = document.createElement('button');
+    btn.className = 'rm';
+    btn.textContent = 'X';
+    btn.title = 'Quitar foto';
+    btn.onclick = function(ev){ ev.stopPropagation(); quitarFoto(i); };
+    div.appendChild(img);
+    div.appendChild(btn);
+    grid.appendChild(div);
+  });
+
+  count.textContent = fotos.length ? fotos.length + ' / ' + MAX_FOTOS + ' fotos' : '';
+  zone.classList.toggle('full', fotos.length >= MAX_FOTOS);
+}
+
+// ── Mensaje (solo ASCII, compatible con todos los móviles) ───
 function buildMsg() {
-  const nombre     = (document.getElementById('nombre').value     || '').trim();
-  const delegacion = (document.getElementById('delegacion').value || '').trim();
-  const id_trabajo = (document.getElementById('id_trabajo').value || '').trim();
-  const fecha      = (document.getElementById('fecha').value      || '').trim();
-  const descripcion= (document.getElementById('descripcion').value|| '').trim();
-  const direccion  = (document.getElementById('direccion').value  || '').trim();
+  const nombre      = val('nombre');
+  const delegacion  = val('delegacion');
+  const id_trabajo  = val('id_trabajo');
+  const fecha       = val('fecha');
+  const descripcion = val('descripcion');
+  const direccion   = val('direccion');
 
+  const L = '----------------------------';
   let m = '';
-  m += '📋 *SOLICITUD TÉCNICO — Digi Mobil*\n';
-  m += '━━━━━━━━━━━━━━━━━━━━━\n';
-  if (nombre)      m += `👤 Técnico: ${nombre}\n`;
-  if (delegacion)  m += `📍 Delegación: ${delegacion}\n`;
-  if (id_trabajo)  m += `🔧 ID trabajo/avería: ${id_trabajo}\n`;
-  if (fecha)       m += `📅 Fecha: ${fecha}\n`;
-  if (tipoSel)     m += `📌 Tipo: ${tipoSel}\n`;
-  if (prioSel)     m += `⚡ Prioridad: ${prioSel}\n`;
-  m += '━━━━━━━━━━━━━━━━━━━━━\n';
-  if (descripcion) m += `📝 ${descripcion}\n`;
-  if (direccion)   m += `🏠 Ref: ${direccion}\n`;
-  if (fotoFile)    m += `📷 *Foto adjunta:* ${fotoFile.name}\n`;
-  m += '━━━━━━━━━━━━━━━━━━━━━\n';
-  m += '_Enviado desde formulario clproyect_';
+  m += '*SOLICITUD TECNICO*\n';
+  m += '*CLPROYECT / MAD9* (' + (window._ref || '') + ')\n';
+  m += L + '\n';
+  if (nombre)      m += 'Tecnico: ' + nombre + '\n';
+  if (delegacion)  m += 'Delegacion: ' + delegacion + '\n';
+  if (id_trabajo)  m += 'ID trabajo/averia: ' + id_trabajo + '\n';
+  if (fecha)       m += 'Fecha: ' + fecha + '\n';
+  if (tipoSel)     m += 'Tipo: *' + tipoSel + '*\n';
+  if (prioSel)     m += 'Prioridad: *' + prioSel + '*\n';
+  m += L + '\n';
+  if (descripcion) m += 'Descripcion:\n' + descripcion + '\n';
+  if (direccion)   m += 'Ref. direccion: ' + direccion + '\n';
+  if (fotos.length) m += 'Fotos: ' + fotos.length + ' adjuntas (se envian en el chat)\n';
+  m += L + '\n';
+  m += '_Formulario CLPROYECT_';
   return m;
 }
 
-function updatePreview() {
-  const nombre      = document.getElementById('nombre').value.trim();
-  const descripcion = document.getElementById('descripcion').value.trim();
-  const preview     = document.getElementById('preview');
-  const label       = document.getElementById('preview-label');
-
-  if (!nombre && !tipoSel && !descripcion) {
-    preview.classList.remove('visible');
-    label.classList.remove('visible');
-    return;
-  }
-  preview.textContent = buildMsg();
-  preview.classList.add('visible');
-  label.classList.add('visible');
+function val(id) {
+  return (document.getElementById(id).value || '').trim();
 }
 
-// ── Validar y enviar ──────────────────────────────────────────
+function updatePreview() {
+  const wrap = document.getElementById('preview-wrap');
+  const pre  = document.getElementById('preview');
+  if (!val('nombre') && !tipoSel && !val('descripcion')) {
+    wrap.classList.remove('visible');
+    return;
+  }
+  pre.textContent = buildMsg();
+  wrap.classList.add('visible');
+}
+
+// ── Validación y envío ───────────────────────────────────────
 function mostrarError(msg) {
   const el = document.getElementById('error-msg');
   el.textContent = msg;
   el.classList.add('visible');
-  setTimeout(() => el.classList.remove('visible'), 4000);
+  clearTimeout(window._errT);
+  window._errT = setTimeout(() => el.classList.remove('visible'), 4500);
 }
 
 function enviar() {
-  const nombre      = document.getElementById('nombre').value.trim();
-  const descripcion = document.getElementById('descripcion').value.trim();
-
-  if (!nombre)       { mostrarError('⚠️ Por favor, introduce el nombre del técnico.'); return; }
-  if (!tipoSel)      { mostrarError('⚠️ Selecciona el tipo de solicitud.'); return; }
-  if (!descripcion)  { mostrarError('⚠️ Añade una descripción de la solicitud.'); return; }
+  if (!val('nombre'))      { mostrarError('Introduce el nombre del tecnico.'); return; }
+  if (!tipoSel)            { mostrarError('Selecciona el tipo de solicitud.'); return; }
+  if (!val('descripcion')) { mostrarError('Anade una descripcion de la solicitud.'); return; }
 
   const msg = buildMsg();
-  const url = `https://wa.me/${_d}?text=${encodeURIComponent(msg)}`;
+  const url = 'https://wa.me/' + _d + '?text=' + encodeURIComponent(msg);
 
-  // Si hay foto adjunta, abrir también la galería para que el técnico la envíe manualmente
-  if (fotoFile) {
-    alert('Se abrirá WhatsApp con el mensaje. Una vez en la conversación, adjunta la foto guardada en tu galería.');
+  if (fotos.length) {
+    alert('Se abrira WhatsApp con el mensaje. Una vez en el chat, adjunta las ' + fotos.length + ' fotos desde tu galeria.');
   }
 
   window.open(url, '_blank');
